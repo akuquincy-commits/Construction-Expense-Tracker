@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="inputSection">
+            <div class="head">
+               <div class="info">
+                <h1>Construction Expense Tracker</h1>
+                <p>Track All Constuction Expenses With Ease</p>
+               </div>
+              
+            <input type="text" id="searchBar" placeholder="🔍Search Expense...">
+            </div>
+        <div class="midSec">
+            <div id="showExpense">
+                <h4 id="expenseHead">Total Expense:</h4>
+                <p id="totalAmount">0</p>
+            </div>
+            <div class="diffrentiation">
+                <p class="diffHead" style="color: rgb(239, 67, 67);">Highest: <span id="highestExpense" class="diffValue">0</span></p>
+                <p class="diffHead" style="color: rgb(70, 241, 70);">Lowest: <span id="lowestExpense" class="diffValue">0</span></p>
+                <p class="diffHead">Number: <span id="numberOfExpenses" class="diffValue">0</span></p>
+                <p><select  id="spendingInDate">
+                    <option value="">Select Period Of Spending</option>
+                    <option value="today" >Today</option>
+                    <option value="This Month">This Month</option>
+        
+                </select>: <span id="dateValue" class="diffValue"></span></p>
+            </div>
+        </div> 
+            
+
+            <div class="inputForm">
+                <input type="text" id="expenseName" placeholder="Name..." class="inputBar">
+                <select id="expenseCategory" class="inputBar">
+                    <option value="">Select Category</option>
+                    <option value="Labour" >Labour</option>
+                    <option value="Transportation" >Transportation</option>
+                    <option value="Materials" >Materials</option>
+                    <option value="Utilities" >Utilities</option>
+                    <option value="Other" >Other</option>
+                </select>
+                <input type="number" placeholder="Price" id="expensePrice" class="inputBar">
+                <input type="date" id="expenseDate" class="inputBar">
+                <button id="addBtn">+ Add Expense</button>
+                <button id="saveBtn">Save</button>
+            </div>
+        </div>
+        <div class="outputSection">
+           <div class="titilesBar"> <p class="titles"><span>Expense</span><span>Category</span><span>Price</span><span>Date</span><span>Options</span></p></div>
+            <div id="displayItems"></div>
+        </div>
+    </div>
+
+
+
+
+  <script src="script.js"></script> 
+</body>
+</html>
