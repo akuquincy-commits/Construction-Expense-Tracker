@@ -161,6 +161,12 @@ function filterExpense(){
    searchBar.addEventListener("input", filterExpense)
 
 function displayExtra(someArray){
+     if(someArray.lenght === 0){
+      highestExpense.innerText = "0"
+      lowestExpense.innerText = "0"
+      numberOfExpenses = "0"
+      return
+   }
    const arrayLength = someArray.length
    numberOfExpenses.innerText = arrayLength
    
@@ -172,10 +178,11 @@ function displayExtra(someArray){
 
    const highestExpenseArray = someArray.find(expense => expense.price === Math.max(...expensesPrices))
    const lowestExpenseArray = someArray.find(expense => expense.price === Math.min(...expensesPrices))
-
+ 
    const highestExpenseName = highestExpenseArray.name
    const lowestExpenseName = lowestExpenseArray.name
     
+
    highestExpense.innerText = `${highestExpenseName} (${highestExpenseValue})`
    lowestExpense.innerText = `${lowestExpenseName} (${lowestExpenseValue})`
 }
