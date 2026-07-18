@@ -161,10 +161,10 @@ function filterExpense(){
    searchBar.addEventListener("input", filterExpense)
 
 function displayExtra(someArray){
-     if(someArray.lenght === 0){
+     if(someArray.length === 0){
       highestExpense.innerText = "0"
       lowestExpense.innerText = "0"
-      numberOfExpenses = "0"
+      numberOfExpenses.innerText = "0"
       return
    }
    const arrayLength = someArray.length
