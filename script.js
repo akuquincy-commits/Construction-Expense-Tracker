@@ -12,6 +12,8 @@ const lowestExpense = document.getElementById("lowestExpense")
 const numberOfExpenses = document.getElementById("numberOfExpenses")
 const spendingInDate = document.getElementById("spendingInDate")
 const dateValue = document.getElementById("dateValue") 
+const inputForm = document.getElementsByClassName("inputForm")
+const addItemInactive = document.getElementById("addItemInactive")
 
  const today = new Date() 
 
@@ -51,6 +53,7 @@ function addExpense(){
 
 refreshUI(expenses)
 dateSpending()
+closeForm()
 
 
    expenseName.value = ""
@@ -69,8 +72,8 @@ function displayExpense(someArray){
         return 
    }else if(someArray.length > 0){
         someArray.forEach( (expense, index) => {
-         displayItems.classList = "yesItems"   
-        displayItems.innerHTML += `<p class="item"><span >${expense.name}</span><span>${expense.category}</span><span>${expense.price}</span><span>${expense.date}</span><span class="optionsDisplay"><button class="delBtn" onclick="delExpense(${index})">Del</button><button class="editBtn" onclick="editExpense(${index})">Edit</button></span></p>`
+         displayItems.classList.add("yesItems")   
+        displayItems.innerHTML += `<p class="item"><span  class="expenseTitles">${expense.name}</span><span class="expenseTitles">${expense.category}</span><span class="expenseTitles">${expense.price}$</span><span class="expenseTitles">${expense.date}</span><span class="optionsDisplay" class="expenseTitles"><button class="delBtn" onclick="delExpense(${index})">Del</button><button class="editBtn" onclick="editExpense(${index})">Edit</button></span></p>`
     });
    
    }
@@ -103,6 +106,7 @@ function editExpense(index){
    displayTotal(expenses)
    displayExtra(expenses)
     dateSpending()
+    displayForm()
    
 }
 
@@ -122,6 +126,7 @@ if(expenseName.value === "" || expenseCategory.value === "" || expensePrice.valu
 
       refreshUI(expenses)
       dateSpending()
+      closeForm()
 
       expenseName.value = ""
       expenseCategory.value = ""
@@ -229,4 +234,14 @@ function refreshUI(someArray){
    displayExpense(someArray)
     displayTotal(someArray)
     displayExtra(someArray)
+}
+function displayForm(){
+   inputForm[0].classList.add("inputFormDisplay")
+    document.body.classList.add("backdrop"); 
+}
+addItemInactive.addEventListener("click", displayForm)
+
+function closeForm(){
+    inputForm[0].classList.remove("inputFormDisplay");
+    document.body.classList.remove("backdrop");
 }

@@ -48,12 +48,13 @@
                 </select>
                 <input type="number" placeholder="Price" id="expensePrice" class="inputBar">
                 <input type="date" id="expenseDate" class="inputBar">
-                <button id="addBtn">+ Add Expense</button>
-                <button id="saveBtn">Save</button>
+                <button id="addBtn" class="btn">+ Add Expense</button>
+                <button id="saveBtn" class="btn">Save</button>
             </div>
+            <button id="addItemInactive" class="btn">+ Add </button>
         </div>
         <div class="outputSection">
-           <div class="titilesBar"> <p class="titles"><span>Expense</span><span>Category</span><span>Price</span><span>Date</span><span>Options</span></p></div>
+           <div class="titilesBar"> <p class="titles"><span>Expense</span><span>Category</span><span>Price</span><span>Date</span><span style="text-align: right; padding-right: 10px;">Options</span></p></div>
             <div id="displayItems"></div>
         </div>
     </div>
