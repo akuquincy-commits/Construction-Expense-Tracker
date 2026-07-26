@@ -266,10 +266,34 @@
     flex-direction: column;
     gap: 10px;
     z-index: 1001;
-    background: rgba(79, 78, 78, 0.776);
+    background: rgba(255, 255, 255, 0.612);
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+   }
+   #closeBtn{
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 5px;
+    color: black;
+    width: auto;
+    height: auto;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    margin: 30px;
+   }
+    #closeBtn:active{
+    transform: scale(1.5);
+    color: red;
+   }
+   .inputBar{
+    width: 65%;
+    height: auto;
+    border: 1px solid grey;
+    background-color: #f8f9fa;
+    border-radius: 8px;
    }
    .backdrop{
     position: fixed;

@@ -14,9 +14,10 @@ const spendingInDate = document.getElementById("spendingInDate")
 const dateValue = document.getElementById("dateValue") 
 const inputForm = document.getElementsByClassName("inputForm")
 const addItemInactive = document.getElementById("addItemInactive")
+const closeBtn = document.getElementById("closeBtn")
 
  const today = new Date() 
-
+ closeBtn.style.display = "none"
 
 const expenses = JSON.parse(localStorage.getItem("expenses")) || []
 refreshUI(expenses)
@@ -236,9 +237,13 @@ function refreshUI(someArray){
     displayExtra(someArray)
 }
 function displayForm(){
+   closeBtn.style.display = ""
    inputForm[0].classList.add("inputFormDisplay")
     document.body.classList.add("backdrop"); 
 }
+closeBtn.addEventListener("click", closeForm)
+
+
 addItemInactive.addEventListener("click", displayForm)
 
 function closeForm(){
