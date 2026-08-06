@@ -15,6 +15,7 @@ const dateValue = document.getElementById("dateValue")
 const inputForm = document.getElementsByClassName("inputForm")
 const addItemInactive = document.getElementById("addItemInactive")
 const closeBtn = document.getElementById("closeBtn")
+const exportCSV = document.getElementById("exportCSV")
 
  const today = new Date() 
  closeBtn.style.display = "none"
@@ -250,3 +251,26 @@ function closeForm(){
     inputForm[0].classList.remove("inputFormDisplay");
     document.body.classList.remove("backdrop");
 }
+
+exportCSV.addEventListener("click", exportToCSV)
+
+function exportToCSV(){
+   
+   let csvContent = "Expense,Category,Price,Date\n";
+   
+   expenses.forEach(expense => {
+      csvContent += `${expense.name},${expense.category},${expense.price},${expense.date}\n`;
+   })
+  const blob = new Blob([csvContent], { type: "text/csv" });
+
+const url = URL.createObjectURL(blob);
+
+const a = document.createElement("a")
+
+a.href = url 
+
+a.download = "expenses.csv"
+
+a.click()
+}
+
